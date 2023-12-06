@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from '../utils/useOnlineStatus'
 
 const Body = () => {
   const [restaurantList, setrestaurantList] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
     (async () => {
@@ -29,6 +31,9 @@ const Body = () => {
   }
 
   console.log(searchText);
+  if(onlineStatus === false){
+    return <h1>Seems like you have lost your connect</h1>
+  }
 
   return (
     <div className="body">
