@@ -24,7 +24,6 @@ const RestaurantCard = (props) => {
 
 export const discountRestaurantCard = (RestaurantCard) => {
   return (props) => {
-    console.log('props', props);
     const {header, subHeader} = props?.resData?.info?.aggregatedDiscountInfoV3
     return (
       <div className="no-underline">

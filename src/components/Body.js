@@ -9,7 +9,6 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
-  console.log("promoted", restaurantList);
 
   useEffect(() => {
     (async () => {
@@ -32,7 +31,6 @@ const Body = () => {
     return <Shimmer />;
   }
 
-  console.log(searchText);
   if (onlineStatus === false) {
     return <h1>Seems like you have lost your connection</h1>;
   }

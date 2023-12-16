@@ -18,7 +18,6 @@ class About extends React.Component {
     this.setState({
       user: json,
     });
-    console.log("mahi", json);
   }
   render() {
     const {name , location, avatar_url} = this.state.user;
